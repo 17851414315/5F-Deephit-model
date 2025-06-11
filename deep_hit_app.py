@@ -16,7 +16,7 @@ st.set_page_config(
 # 加载模型 (使用缓存避免重复加载)
 @st.cache_resource
 def load_model():
-    return torch.load("deephit5sigwbb.pt")
+    return torch.load("deephit5sigwbb.pt", weights_only=False)
 
 # 页面标题和说明
 st.title("5F-Deephit model")
