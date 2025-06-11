@@ -80,9 +80,9 @@ if submitted:
 
         # 计算生存率
         s30 = ev1.surv_at_times(30)
-        s30pro = round(s30[0] * 100, 2)
+        s30pro = round(float(s30[0]) * 100, 2)
         s60 = ev1.surv_at_times(60)
-        s60pro = round(s60[0] * 100, 2)
+        s60pro = round(float(s60[0]) * 100, 2)
 
         # 清除进度条
         progress_bar.empty()
