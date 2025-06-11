@@ -1,3 +1,5 @@
+import os
+os.environ['PYCOX_NO_SAVE'] = '1'  # 禁止pycox尝试保存数据到本地
 import streamlit as st
 import numpy as np
 import torch
