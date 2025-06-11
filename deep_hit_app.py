@@ -4,8 +4,7 @@ import numpy as np
 import torch
 import pandas as pd
 import matplotlib.pyplot as plt
-
-from pycox.evaluation import EvalSurv
+from pycox import evaluation
 
 # 设置页面标题和布局
 st.set_page_config(
@@ -77,7 +76,7 @@ if submitted:
         # 进行预测
         model = load_model()
         pred1 = model.interpolate(10).predict_surv_df(pdata2)
-        ev1 = EvalSurv(pred1, np.array(1), np.array(1))
+        ev1 = evaluation.EvalSurv(pred1, np.array(1), np.array(1))
 
         # 计算生存率
         s30 = ev1.surv_at_times(30)
